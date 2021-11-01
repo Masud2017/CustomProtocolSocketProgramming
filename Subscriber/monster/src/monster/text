@@ -1,0 +1,109 @@
+  // while (true) {
+        //     client.send("subscribe","victory","victory");
+        //     client.send("subscribe","position","victory");
+        //     List<StringBuilder> ll = client.recv();
+        //     System.out.println(ll);
+        //     client.send("ack",null,null);
+
+        //     Display disp = new Display("E5");
+        //     disp.play();
+
+        //     System.out.println("Take a guess : ");
+        //     String guess = scanner.nextLine();
+        //     client.send("subscribe","guess","victory");
+        //     client.recv();
+        //     client.send("publish","guess",guess);
+            
+        //     System.out.print("\033[H\033[2J");  
+        //     System.out.flush();  
+        // }
+
+
+
+
+        if (str.contains(topic) == true) {
+
+          splitedStringList.add(topic);
+          if (str.length() > 12) {
+              List<String> twoBigString = new ArrayList<>();
+
+              // that means one string contain two information
+              String[] longStringSpliter = str.split(topic);
+              twoBigString.add(longStringSpliter[1]);
+              twoBigString.add(longStringSpliter[2]);
+              List<String> splitedSecondHalfSpecial = new ArrayList<>();
+
+              for (String string : twoBigString) {
+                  if (string.length() > 3) {
+
+                      splitedSecondHalfSpecial.add(string.split(":")[0]);
+                      splitedSecondHalfSpecial.add(string.split(":")[1]);
+
+                      splitedStringList.add(splitedSecondHalfSpecial.get(0));
+                      splitedStringList.add(splitedSecondHalfSpecial.get(1));
+                  }
+              }
+
+          } else {
+              
+              String secondHalf = str.split(topic)[1];
+              List<String> splitedSecondHalf = new ArrayList<>();
+              if (secondHalf.length() > 3) {
+                  splitedSecondHalf.add(secondHalf.split(":")[0]);
+                  splitedSecondHalf.add(secondHalf.split(":")[1]);
+
+                  splitedStringList.add(splitedSecondHalf.get(0));
+                  splitedStringList.add(splitedSecondHalf.get(1));
+              }
+          }
+          
+          
+      }
+
+
+        // List<Integer> coord1 = new ArrayList<>();
+        // coord1.add(3);
+        // coord1.add(7);
+        // List<Integer> coord2 = new ArrayList<>();
+        // coord2.add(5);
+        // coord2.add(7);
+
+        // int val1 = util.getStraightLineDistance(coord1, coord2);
+        
+        // List<Integer> coord3 = new ArrayList<>();
+        // coord3.add(5);
+        // coord3.add(5);
+        // List<Integer> coord4 = new ArrayList<>();
+        // coord4.add(5);
+        // coord4.add(7);
+
+        // int val2 = util.getStraightLineDistance(coord3, coord4);
+
+        // System.out.println("Texting the straight are : "+util.aread(val1, val2));
+        
+
+
+
+        for (int i = 0; i < 10; i++) {
+          if (i == 0) {
+              System.out.printf("\t");
+              for (int j = 0; j < 10; j++) {
+                  System.out.printf("%d\t",j+1);
+              }
+           }
+          System.out.printf("\n");
+
+          for (int j = 0; j < 10; j++) {
+              System.out.printf("\t--");
+          }
+          
+          System.out.printf("\n\n");
+          System.out.printf("%c",arrayAlphabate[i]);
+          for (int j = 0; j < 10; j++) {
+              // the data should be here 
+
+              System.out.printf("\t| |");
+          }
+          System.out.printf("\n");
+
+      }

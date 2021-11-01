@@ -1,0 +1,4 @@
+module monster {
+	exports monster;
+
+}
